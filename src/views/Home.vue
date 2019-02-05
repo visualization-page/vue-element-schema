@@ -8,7 +8,7 @@
 
 <script>
 import mock from '../assets/mock'
-import Schema from '../components/Shcema'
+import Schema from '../components/schema/Shcema'
 
 export default {
   name: 'Home',
