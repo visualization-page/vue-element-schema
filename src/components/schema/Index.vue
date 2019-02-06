@@ -112,6 +112,10 @@ export default {
       return result
     },
 
+    getValue () {
+      return JSON.parse(JSON.stringify(this.mapData))
+    },
+
     isBlockImg (format) {
       return format === 'block-image'
     },
