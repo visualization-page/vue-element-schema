@@ -5,7 +5,8 @@ import {
   FormItem,
   Input,
   Select,
-  Option
+  Option,
+  ColorPicker
 } from 'element-ui'
 
 Vue.use(Button)
@@ -14,3 +15,4 @@ Vue.use(FormItem)
 Vue.use(Input)
 Vue.use(Select)
 Vue.use(Option)
+Vue.use(ColorPicker)

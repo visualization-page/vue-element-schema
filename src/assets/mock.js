@@ -71,6 +71,11 @@ module.exports = {
       type: 'string',
       default: '我是按钮'
     },
+    color: {
+      title: '颜色',
+      type: 'string',
+      format: 'color'
+    },
     fontSize: {
       title: '字体大小',
       type: 'string',

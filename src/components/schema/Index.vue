@@ -36,6 +36,12 @@
           :options="properties[field].options"
           v-model="mapData[field]"
         />
+        <schema-color
+          v-else-if="isColor(properties[field].format)"
+          :key="field"
+          :label="properties[field].title"
+          v-model="mapData[field]"
+        />
         <schema-input
           v-else-if="isDefault(properties[field].type)"
           :key="field"
@@ -51,6 +57,7 @@
 import FormatImage from './SchemaBlockImage'
 import SchemaSelect from './SchemaSelect'
 import SchemaInput from './SchemaInput'
+import SchemaColor from './SchemaColor'
 
 export default {
   data () {
@@ -67,7 +74,8 @@ export default {
   components: {
     FormatImage,
     SchemaInput,
-    SchemaSelect
+    SchemaSelect,
+    SchemaColor
   },
 
   computed: {
@@ -112,6 +120,10 @@ export default {
       return format === 'select'
     },
 
+    isColor (format) {
+      return format === 'color'
+    },
+
     isArray (type) {
       return type === 'array'
     },
@@ -150,6 +162,7 @@ export default {
       margin-bottom 0
     &__label
       flex 0 0 60px
+      font-size 12px
   &-block-image-group
     margin 20px 0
     padding 20px 0
