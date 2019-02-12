@@ -7,7 +7,8 @@
 </template>
 
 <script>
-import mock from '../assets/mock'
+// import mock from '../assets/mock'
+import mock from '../assets/btn'
 import Schema from '../components/schema/Index'
 
 export default {

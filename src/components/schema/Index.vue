@@ -1,7 +1,7 @@
 <template>
   <div class="schema" v-if="mapData">
     <p>{{ schema.title }}</p>
-    <template v-if="schema.subTypes && schema.subTypes.length">
+    <div class="schema__subtype" v-if="schema.subTypes && schema.subTypes.length">
       <p>选择模版</p>
       <div
         v-for="(item, i) in schema.subTypes"
@@ -15,7 +15,7 @@
         <div class="schema__sub--cover"></div>
         <span>{{ item.title }}</span>
       </div>
-    </template>
+    </div>
     <div class="schema__properties">
       <template v-for="field in Object.keys(properties)">
         <div
@@ -141,6 +141,10 @@ export default {
 
 <style lang="stylus">
 .schema
+  &__subtype
+    margin-bottom 20px
+    padding-bottom 20px
+    border-bottom 1px solid #E9ECF0
   &__sub
     display inline-block
     border 1px #eee solid
@@ -167,13 +171,4 @@ export default {
     &__label
       flex 0 0 60px
       font-size 12px
-  &-block-image-group
-    margin 20px 0
-    padding 20px 0
-    border-top 1px solid #E9ECF0
-    border-bottom 1px solid #E9ECF0
-    .schema-format-image
-      margin-bottom 20px
-      &:last-child
-        margin-bottom 0
 </style>
