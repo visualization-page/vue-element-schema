@@ -1,7 +1,12 @@
 <template>
   <div class="schema-item schema-input">
     <span class="schema-item__label" v-if="label">{{ label }}：</span>
-    <el-input :value="value" @input="val => $emit('input', val)"/>
+    <el-input
+      size="mini"
+      :value="value"
+      :placeholder="placeholder"
+      @input="val => $emit('input', val)"
+    />
   </div>
 </template>
 
@@ -12,6 +17,7 @@ export default {
   props: {
     label: String,
     // defaultValue: [String, Number],
+    placeholder: String,
     value: String
   },
 
