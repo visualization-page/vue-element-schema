@@ -3,26 +3,30 @@
     <span class="schema-item__label" v-if="label">{{ label }}：</span>
     <el-input
       size="mini"
-      :value="value"
+      :value="splitValue[linkIndex]"
       :placeholder="placeholder"
-      @input="val => $emit('input', val)"
+      @input="val => handleChange(val, 0)"
     />
   </div>
 </template>
 
 <script>
+import link from './mixin/link'
+
 export default {
   name: 'schema-input',
 
   props: {
     label: String,
-    // defaultValue: [String, Number],
     placeholder: String,
     value: String
   },
 
+  mixins: [link],
+
   data () {
     return {
+      linkIndex: 1
     }
   },
 

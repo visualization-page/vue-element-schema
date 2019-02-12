@@ -19,7 +19,7 @@ module.exports = {
       cover: '',
       type: 'object',
       properties: {
-        navName: {
+        navLink: {
           title: '链接',
           type: 'string'
         }

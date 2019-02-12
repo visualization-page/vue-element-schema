@@ -2,8 +2,8 @@
   <div class="schema-item schema-select">
     <span class="schema-item__label" v-if="label">{{ label }}：</span>
     <el-select
-      :value="value"
-      @change="val => $emit('input', val)"
+      :value="splitValue[linkIndex]"
+      @change="val => handleChange(val, 1)"
       placeholder="请选择"
       size="mini"
     >
@@ -14,28 +14,31 @@
         :value="item.value"
       />
     </el-select>
+    <slot />
   </div>
 </template>
 
 <script>
+import link from './mixin/link'
+
 export default {
   name: 'schema-select',
 
   data () {
     return {
-      // value: ''
+      linkIndex: 0
     }
   },
+
+  mixins: [link],
 
   props: {
     options: Array,
     label: String,
-    // defaultValue: [String, Number]
     value: [String, Number]
   },
 
   created () {
-    // this.value = this.defaultValue
   }
 }
 </script>
@@ -44,4 +47,6 @@ export default {
   .schema-select
     // display flex
     // align-items center
+    .el-select
+      margin-right 10px
 </style>
