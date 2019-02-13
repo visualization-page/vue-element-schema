@@ -118,17 +118,26 @@ export default {
   watch: {
     selectedSubTypesIndex () {
       this.mapData = this.initMapData(this.properties)
+    },
+    schema () {
+      this.init()
     }
   },
 
   created () {
-    if (this.schema.subTypes && this.schema.subTypes.length) {
-      this.selectedSubTypesIndex = 0
-    }
-    this.mapData = this.initMapData(this.properties)
+    this.init()
   },
 
   methods: {
+    init () {
+      if (this.schema.subTypes && this.schema.subTypes.length) {
+        this.selectedSubTypesIndex = 0
+      } else {
+        this.selectedSubTypesIndex = undefined
+      }
+      this.mapData = this.initMapData(this.properties)
+    },
+
     initMapData (obj) {
       const result = {}
       Object.keys(obj).forEach(key => {
