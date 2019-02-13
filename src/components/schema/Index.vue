@@ -128,8 +128,11 @@ export default {
     selectedSubTypesIndex () {
       this.mapData = this.initMapData(this.properties)
     },
-    schema () {
-      this.init()
+    schema (val) {
+      this.mapData = null
+      if (val) {
+        this.init()
+      }
     }
   },
 
