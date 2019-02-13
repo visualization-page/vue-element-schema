@@ -24,8 +24,16 @@ export default {
       return format === 'hidden'
     },
 
+    isNumber (type) {
+      return type === 'number'
+    },
+
     isDefault (type) {
       return type === 'string'
+    },
+
+    isTextarea (format) {
+      return format === 'textarea'
     }
   }
 }

@@ -21,7 +21,7 @@ export default {
           ? `${val}_${this.splitValue[type]}`
           : `${this.splitValue[type]}_${val}`
       }
-      console.log(value)
+      // console.log(value)
       this.$emit('input', value)
     }
   }
