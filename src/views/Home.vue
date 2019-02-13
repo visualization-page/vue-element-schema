@@ -8,7 +8,8 @@
 
 <script>
 // import mock from '../assets/mock'
-import mock from '../assets/btn'
+// import mock from '../assets/btn'
+import mock from '../assets/text'
 import Schema from '../components/schema/Index'
 
 export default {

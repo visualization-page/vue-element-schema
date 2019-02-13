@@ -20,6 +20,10 @@ export default {
       return type === 'array'
     },
 
+    isHidden (format) {
+      return format === 'hidden'
+    },
+
     isDefault (type) {
       return type === 'string'
     }

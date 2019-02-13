@@ -139,7 +139,9 @@ export default {
             result[key].push(this.mapData && this.mapData[key][i] || valItem)
           })
         } else {
-          result[key] = this.mapData && this.mapData[key] || obj[key].default
+          result[key] = obj[key].overwrite
+            ? obj[key].default
+            : this.mapData && this.mapData[key] || obj[key].default
         }
       })
       return result
