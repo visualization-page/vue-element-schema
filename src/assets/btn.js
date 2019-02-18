@@ -12,6 +12,65 @@ module.exports = {
           description: '',
           type: 'string',
           format: 'color'
+        },
+        marginTb: {
+          title: '上下边距',
+          description: '',
+          type: 'number',
+          default: 0
+        },
+        marginLr: {
+          title: '左右边距',
+          description: '',
+          type: 'number',
+          default: 10
+        },
+        subType: {
+          format: 'hidden',
+          default: 1,
+          overwrite: true
+        }
+      }
+    },
+    {
+      title: '块级按钮',
+      cover: '',
+      type: 'object',
+      properties: {
+        borderColor: {
+          title: '边框颜色',
+          description: '',
+          type: 'string',
+          format: 'color'
+        },
+        marginTb: {
+          title: '上下边距',
+          description: '',
+          type: 'number',
+          default: 0
+        },
+        marginLr: {
+          title: '左右边距',
+          description: '',
+          type: 'number',
+          default: 10
+        },
+        subType: {
+          format: 'hidden',
+          default: 2,
+          overwrite: true
+        }
+      }
+    },
+    {
+      title: '悬浮按钮',
+      cover: '',
+      type: 'object',
+      properties: {
+        subType: {
+          format: 'hidden',
+          default: 3,
+          overwrite: true
         }
       }
     },
@@ -26,31 +85,28 @@ module.exports = {
           type: 'string',
           format: 'image',
           default: ''
+        },
+        marginTb: {
+          title: '上下边距',
+          description: '',
+          type: 'number',
+          default: 0
+        },
+        marginLr: {
+          title: '左右边距',
+          description: '',
+          type: 'number',
+          default: 10
+        },
+        subType: {
+          format: 'hidden',
+          default: 0,
+          overwrite: true
         }
       }
     },
   ],
   properties: {
-    category: {
-      title: '风格',
-      type: 'number',
-      format: 'select',
-      default: 1,
-      options: [
-        {
-          label: '普通按钮',
-          value: 1
-        },
-        {
-          label: '块级按钮',
-          value: 2
-        },
-        {
-          label: '悬浮按钮',
-          value: 3
-        },
-      ]
-    },
     size: {
       title: '尺寸',
       type: 'string',
@@ -75,23 +131,6 @@ module.exports = {
       title: '文本',
       type: 'string'
     },
-    click: {
-      title: '点击事件',
-      type: 'string',
-      format: 'select',
-      default: 'tel_tel://123',
-      options: [
-        {
-          label: '跳转到',
-          value: 'link'
-        },
-        {
-          label: '拨打电话',
-          value: 'tel'
-        }
-      ],
-      isLink: true
-    },
     backgroundColor: {
       title: '背景色',
       description: '',
@@ -104,6 +143,27 @@ module.exports = {
       type: 'string',
       format: 'color',
       default: '#666'
+    },
+    click: {
+      title: '点击事件',
+      type: 'string',
+      format: 'select',
+      default: 'tel_tel://123',
+      options: [
+        {
+          label: '跳转到外部',
+          value: 'link'
+        },
+        {
+          label: '跳转到内部页面',
+          value: 'inner'
+        },
+        {
+          label: '拨打电话',
+          value: 'tel'
+        }
+      ],
+      isLink: true
     }
   }
 }
